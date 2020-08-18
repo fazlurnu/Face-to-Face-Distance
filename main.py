@@ -33,7 +33,7 @@ while(True):
         
         cx_list = []
         cy_list = []
-        
+                
         for (ex,ey,ew,eh) in eyes:
             cx_list.append(int(ex+ew/2))
             cy_list.append(int(ey+eh/2))
@@ -47,9 +47,10 @@ while(True):
             pixelDistance = getDistance(point1, point2)
             
             #the estimated distance is obtained from measurement and interpolation
-            estimatedDistance = -0.7249*pixelDistance + 103.85
+            estimatedDistance_eye = -0.7249*pixelDistance + 103.85
+            estimatedDistance_face = -0.2251*w + 93.951
             
-            print(str(estimatedDistance) + " cm")
+            print(estimatedDistance_eye, estimatedDistance_face)
             
     cv2.imshow('img',frame)
     
